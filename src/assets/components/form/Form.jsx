@@ -13,21 +13,10 @@ function Form() {
         setActive(!active)
     }
 
-    const handleBlur = (e) => {
-        if (e.target.value === '') {
-            e.target.classList.add(styles.error)
-            e.target.placeholder = 'Вы не ввели ваши данные!'
-        } else {
-            e.target.classList.remove(styles.error) 
-        }
-    }
-
     const handleBtn = (e) => {
         e.preventDefault()
         alert("Ваши данные сохранены.")
     }
-
-
 
     return (  
         <form className={styles.form}>
@@ -41,8 +30,7 @@ function Form() {
                 type='text' 
                 name='email'
                 // value={value}
-                placeholder='Адрес эл. почты' 
-                onBlur={handleBlur}
+                placeholder='Адрес эл. почты'
                 disabled={isChecked}/>
             </div>
 
@@ -52,7 +40,6 @@ function Form() {
                 name='password'
                 // value={value}
                 placeholder='Пароль'
-                onBlur={handleBlur}
                 disabled={isChecked}/>
             </div>
 
